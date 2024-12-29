@@ -9,11 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var swiftCode = SwiftRun()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+        swiftCode.swiftArray = SwiftAdvanceCode()
+        swiftCode.swiftArray?.runCode()
     }
-
-
 }
 

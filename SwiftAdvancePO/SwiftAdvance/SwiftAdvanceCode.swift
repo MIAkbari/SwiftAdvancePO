@@ -8,9 +8,18 @@
 import Foundation
 
 struct SwiftAdvanceCode {
-    
-    mutating func runCode() {
-        code(from: "Array") {
+   
+    func runCode() {
+        example(of: "usingOfStack") {
+            var stack = Stack<Int>()
+            
+            stack.push(2)
+            stack.push(4)
+            stack.push(6)
+            stack.push(5)
+            stack.pop()
+            
+            Log.debug(stack)
         }
     }
 }
