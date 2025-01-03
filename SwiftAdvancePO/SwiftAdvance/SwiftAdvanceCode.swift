@@ -6,20 +6,44 @@
 //
 
 import Foundation
+import UIKit
+
 
 struct SwiftAdvanceCode {
-   
+ 
     func runCode() {
-        example(of: "usingOfStack") {
-            var stack = Stack<Int>()
+        example(of: "Generic") {
+            let time = tm()
             
-            stack.push(2)
-            stack.push(4)
-            stack.push(6)
-            stack.push(5)
-            stack.pop()
-            
-            Log.debug(stack)
         }
     }
+
 }
+
+class newEl {
+    private(set) var new = 2
+    let title: String = "Subject"
+    let page: Int = 12
+}
+
+struct DataRaw<Element>: RawRepresentable {
+    typealias RawValue = Element
+    
+    var rawValue: Element
+    
+    init(rawValue: RawValue) {
+        self.rawValue = rawValue
+    }
+}
+
+//protocol AnyType {
+//    associatedtype Element
+//
+//    var value: Element { get set }
+//}
+
+
+//infix operator ++: MultiplicationPrecedence
+//func ++(_ base: Int, _ power: Int) -> Int {
+//    Int(pow(Double(base), Double(power)))
+//}

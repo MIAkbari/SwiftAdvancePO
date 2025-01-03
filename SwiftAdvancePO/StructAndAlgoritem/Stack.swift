@@ -11,6 +11,10 @@ public struct Stack<Element> {
     private var storage: [Element] = []
     
     public init() {}
+    
+    public init(_ elements: [Element]) {
+        storage = elements
+    }
 }
 
 extension Stack: CustomStringConvertible {
@@ -29,5 +33,19 @@ extension Stack {
     @discardableResult
     public mutating func pop() -> Element? {
         storage.popLast()
+    }
+}
+
+extension Stack {
+    
+    public var peek: Element? { storage.last }
+    
+    public var isEmpty: Bool { peek == nil }
+}
+
+// if stack get initail data need add ExArrayLi
+extension Stack: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: Element...) {
+        storage = elements
     }
 }
